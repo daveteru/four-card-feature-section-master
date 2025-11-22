@@ -1,0 +1,137 @@
+body{
+    background-color:rgb(250, 250, 250);
+    margin:0px;
+    color: hsl(234, 12%, 34%)
+}
+h1{
+    font-weight: 600;
+    margin: 0;
+}
+.mainwrap{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: poppins;
+    justify-content: center;
+    gap:42px
+}
+
+.titlewrap{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 2.5rem;
+    font-weight: 300;
+    gap: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-weight: 200;
+    color: hsl(212, 6%, 44%);
+}
+
+.maintitle{
+    justify-content: center;
+}
+.subtitle{
+    display: inline-block; /* shrink to its content */
+    width: 35%;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+
+.contentwrap{
+    display: flex;
+    width: 100vw;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+.content1{
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    line-height: 1rem;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+.content2{
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    line-height: 1rem;
+    /* border: 1px solid black; */
+    gap:32px;
+}
+
+.content3{
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    line-height: 1rem;
+    /* border: 1px solid black; */
+}
+
+.card{
+    min-height: 225px;
+    min-width: 325px;
+    max-width: 325px;    
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 32px;
+    box-shadow: 2px 9px 29px 1px rgb(212, 219, 225);
+    box-sizing: border-box;
+    overflow: hidden;
+    border-top: 4px solid;
+}
+
+.card p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    font-weight: 400;
+    font-size: 0.75rem;
+}
+
+.card img {
+    align-self: flex-end;
+    height: 60px;
+    width: 60px;
+}
+
+strong{
+    font-weight: 600;
+    display: block;
+    margin-bottom:12px;
+    font-size: 20px;
+}
+
+.supervisor{
+    border-color: rgb(116, 234, 215);
+}
+
+.team{
+    border-color: rgb(219, 43, 43);
+}
+
+.karma{
+    border-color: rgb(239, 169, 56);
+}
+
+.calculator{
+    border-color: rgb(73, 127, 226);
+}
