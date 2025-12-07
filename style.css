@@ -1,28 +1,28 @@
-body{
-    background-color:rgb(250, 250, 250);
-    margin:0px;
+body {
+    background-color: rgb(250, 250, 250);
+    margin: 0px;
     color: hsl(234, 12%, 34%)
 }
-h1{
+
+h1 {
     font-weight: 600;
     margin: 0;
 }
-.mainwrap{
+
+.mainwrap {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     font-family: poppins;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 42px;
+    width: 100%;
+}
 
-    /* Make width calculations include padding/borders to avoid overflow */
-    *{
-        box-sizing: border-box;
-    justify-content: center;
-    gap:42px
-        width: 100%;
-
-.titlewrap{
+.titlewrap {
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -32,47 +32,57 @@ h1{
     gap: 1;
     justify-content: center;
     align-items: center;
-        width: 100%;
+    width: 100%;
+    margin-top: 42px;
+}
 
-.title{
+.title {
     font-weight: 200;
     color: hsl(212, 6%, 44%);
 }
 
-.maintitle{
-        /* allow cards to shrink on small screens */
-        min-width: 0;
+.maintitle {
+    /* allow cards to shrink on small screens */
+    min-width: 0;
 }
-.subtitle{
-    display: inline-block; /* shrink to its content */
+
+.subtitle {
+    display: inline-block;
+    /* shrink to its content */
     max-width: 500px;
     font-size: 0.9rem;
     line-height: 1.4rem;
 }
 
-.contentwrap{
+.contentwrap {
     display: flex;
     width: 100vw;
     height: 50vh;
     justify-content: center;
     align-items: center;
-    padding: 20px;   
+    padding: 20px;
     box-sizing: border-box;
     gap: 32px;
 }
 
 @media screen and (width <=600px) {
-    .contentwrap{
+    .contentwrap {
         flex-direction: column;
         height: 100%;
     }
 
-    .titlewrap{
-        background-color: yellow;
+    .titlewrap {
+        margin-top: 42px;
     }
-    
+
+    .subtitle {
+        font-size: 1rem;
+        padding: 0px 40px;
+    }
+
 }
-.content1{
+
+.content1 {
     display: flex;
     flex-direction: column;
     line-height: 1rem;
@@ -80,16 +90,16 @@ h1{
     /* border: 1px solid black; */
 }
 
-.content2{
+.content2 {
     justify-content: center;
     display: flex;
     flex-direction: column;
     line-height: 1rem;
     /* border: 1px solid black; */
-    gap:32px;
+    gap: 32px;
 }
 
-.content3{
+.content3 {
     height: 100%;
     justify-content: center;
     display: flex;
@@ -98,10 +108,10 @@ h1{
     /* border: 1px solid black; */
 }
 
-.card{
+.card {
     min-height: 225px;
     min-width: 325px;
-    max-width: 325px;    
+    max-width: 325px;
     background-color: rgb(255, 255, 255);
     border-radius: 12px;
     display: flex;
@@ -129,25 +139,135 @@ h1{
     width: 60px;
 }
 
-strong{
+strong {
     font-weight: 600;
     display: block;
-    margin-bottom:12px;
+    margin-bottom: 12px;
     font-size: 20px;
 }
 
-.supervisor{
+.supervisor {
     border-color: rgb(116, 234, 215);
 }
 
-.team{
+.team {
     border-color: rgb(219, 43, 43);
 }
 
-.karma{
+.karma {
     border-color: rgb(239, 169, 56);
 }
 
-.calculator{
+.calculator {
     border-color: rgb(73, 127, 226);
+}
+
+/* Calculator Styles */
+.calculator-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    width: fit-content;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    box-shadow: 2px 9px 29px 1px rgb(212, 219, 225);
+    overflow: hidden;
+    border-top: 4px solid rgb(73, 127, 226);
+}
+
+.calc-display {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 12px 12px 0 0;
+}
+
+.calc-display .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.calc-display .current-operand {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.calc-button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid #f3f3f3;
+    outline: none;
+    background-color: white;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    color: hsl(234, 12%, 34%);
+    position: relative;
+}
+
+.calc-button:hover {
+    background-color: white;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px) scale(1.05);
+    z-index: 10;
+    border-color: transparent;
+    border-radius: 12px;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.nav-button {
+    text-decoration: none;
+    color: hsl(234, 12%, 34%);
+    border: 2px solid hsl(234, 12%, 34%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: hsl(234, 12%, 34%);
+    color: white;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-pop {
+    animation: popIn 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.5);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
